@@ -11,4 +11,8 @@ dependencies {
     providedCompile 'javax:javaee-web-api:7.0'
     
     testImplementation     'junit:junit:4.13'
+    
+    providedCompile 'jakarta.platform:jakarta.jakartaee-web-api:9.0.0'
+
+    
 }

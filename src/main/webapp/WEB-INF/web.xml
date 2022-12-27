@@ -34,5 +34,29 @@
         <servlet-name>editprofile</servlet-name>
         <url-pattern>/editprofile</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <servlet-class>com.kaihanahammed.ATech.search</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>cart</servlet-name>
+        <servlet-class>com.kaihanahammed.ATech.cart</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cart</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>product</servlet-name>
+        <servlet-class>com.kaihanahammed.ATech.product</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>product</servlet-name>
+        <url-pattern>/product</url-pattern>
+    </servlet-mapping>
     
 </web-app>
