@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * @author Kaihan_Ahammed
  * @version 1
  */
-public class search extends HttpServlet {
+public class products extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
