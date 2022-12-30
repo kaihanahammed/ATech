@@ -18,7 +18,7 @@ public class Atech {
     public String username = "kaihanahammed";
     public String password = "kaihanahammed";
 
-    Mydb mydb;
+    private Mydb mydb;
 
     public Atech() {
         mydb = new Mydb(dblink, username, password);
