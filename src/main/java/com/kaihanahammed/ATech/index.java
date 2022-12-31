@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import com.kaihanahammed.EcomUtil.*;
 
 /**
  *
@@ -28,6 +29,7 @@ public class index extends HttpServlet {
             out.println("Index servlet");
             out.println("</body>");
             out.println("</html>");
+            User user = Atech.getuser("", "");
         }
     }
 

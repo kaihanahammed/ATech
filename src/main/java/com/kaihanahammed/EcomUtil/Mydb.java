@@ -1,4 +1,4 @@
-package com.kaihanahammed.Util;
+package com.kaihanahammed.EcomUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -68,7 +68,6 @@ public class Mydb {
         } catch (SQLException ex) {
             Logger.getLogger(Mydb.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         this.closedb();
         return resultSet;
     }

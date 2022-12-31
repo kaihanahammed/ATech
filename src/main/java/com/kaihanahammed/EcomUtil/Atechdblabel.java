@@ -1,4 +1,4 @@
-package com.kaihanahammed.Util;
+package com.kaihanahammed.EcomUtil;
 
 /**
  *

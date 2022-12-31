@@ -1,4 +1,4 @@
-package com.kaihanahammed.Util;
+package com.kaihanahammed.EcomUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,13 +12,13 @@ import java.util.logging.Logger;
  */
 public class Atech {
 
-    public int version = 1;
+    public static int version = 1;
 
-    public String dblink = "";
-    public String username = "kaihanahammed";
-    public String password = "kaihanahammed";
+    private static String dblink = "";
+    private static String username = "kaihanahammed";
+    private static String password = "kaihanahammed";
 
-    private Mydb mydb;
+    private static Mydb mydb;
 
     public Atech() {
         mydb = new Mydb(dblink, username, password);
@@ -26,24 +26,27 @@ public class Atech {
 
     
     
-    public User getuserbyid(String id) {
-        return this.getuser(Atechdblabel.user_user_id, id);
+    public static User getuserbyid(String id) {
+        mydb = new Mydb(dblink, username, password);
+        return getuser(Atechdblabel.user_user_id, id);
     }
 
     
     
-    public User getuserbyemail(String email) {
-        return this.getuser(Atechdblabel.user_user_id, email);
+    public static User getuserbyemail(String email) {
+        mydb = new Mydb(dblink, username, password);
+        return getuser(Atechdblabel.user_user_id, email);
     }
 
     
     
-    public User getuser(String label, String value) {
+    public static User getuser(String label, String value) {
         String sql = "SELECT * FROM Profile\n" + "WHERE " + label + "=\'" + value + "\';";
 
         User user = new User();
         ResultSet profileresultset;
 
+        mydb = new Mydb(dblink, username, password);
         profileresultset = mydb.runsql(sql);
 
         try {
@@ -68,12 +71,13 @@ public class Atech {
 
     
     
-    public Product getproduct(String label, String value) {
+    public static Product getproduct(String label, String value) {
         String sql = "SELECT * FROM Profile\n" + "WHERE " + label + "=\'" + value + "\';";
 
         Product product = new Product();
         ResultSet profileresultset;
 
+        mydb = new Mydb(dblink, username, password);
         profileresultset = mydb.runsql(sql);
 
         try {
@@ -99,12 +103,13 @@ public class Atech {
     
     
     
-    public Order getorder(String label, String value) {
+    public static Order getorder(String label, String value) {
         String sql = "SELECT * FROM Profile\n" + "WHERE " + label + "=\'" + value + "\';";
 
         Order order = new Order();
         ResultSet profileresultset;
 
+        mydb = new Mydb(dblink, username, password);
         profileresultset = mydb.runsql(sql);
 
         try {
@@ -135,12 +140,13 @@ public class Atech {
     
     
     
-    public Employee getemployee(String label, String value) {
+    public static Employee getemployee(String label, String value) {
         String sql = "SELECT * FROM Profile\n" + "WHERE " + label + "=\'" + value + "\';";
 
         Employee employee = new Employee();
         ResultSet profileresultset;
 
+        mydb = new Mydb(dblink, username, password);
         profileresultset = mydb.runsql(sql);
 
         try {
@@ -177,7 +183,7 @@ public class Atech {
     
     
     
-    public void setuser(User user) {
+    public static void setuser(User user) {
         String sql = "INSERT INTO "
                 + Atechdblabel.user_table_name
                 + " (" + Atechdblabel.user_user_id
@@ -206,12 +212,13 @@ public class Atech {
                 + ", " + user.user_image_link
                 + ", " + user.profile_status
                 + ");";
+        mydb = new Mydb(dblink, username, password);
         mydb.runsql(sql);
     }
 
     
     
-    public void setproduct(Product product) {
+    public static void setproduct(Product product) {
         String sql = "INSERT INTO "
                 + Atechdblabel.product_table_name
                 + " (" + Atechdblabel.product_product_id
@@ -243,12 +250,13 @@ public class Atech {
                 + ", " + product.warranty_in_month
                 + ", " + product.gurrantte_in_month
                 + ");";
+        mydb = new Mydb(dblink, username, password);
         mydb.runsql(sql);
     }
     
     
     
-    public void setorder(Order order) {
+    public static void setorder(Order order) {
         String sql = "INSERT INTO "
                 + Atechdblabel.product_table_name
                 + " (" + Atechdblabel.order_order_id
@@ -290,12 +298,13 @@ public class Atech {
                 + ", " + order.delivery_charge
                 + ", " + order.order_amount
                 + ");";
+        mydb = new Mydb(dblink, username, password);
         mydb.runsql(sql);
     }
     
     
     
-    public void setemployee(Employee employee) {
+    public static void setemployee(Employee employee) {
         String sql = "INSERT INTO "
                 + Atechdblabel.product_table_name
                 + " (" + Atechdblabel.employee_user_id
@@ -349,6 +358,7 @@ public class Atech {
                 + ", " + employee.bank_account_number
                 + ", " + employee.employee_type
                 + ");";
+        mydb = new Mydb(dblink, username, password);
         mydb.runsql(sql);
     }
 }
